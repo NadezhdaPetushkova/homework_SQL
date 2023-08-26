@@ -8,7 +8,6 @@ import data.DataHelper;
 import page.LoginPage;
 
 import java.sql.SQLException;
-
 import static com.codeborne.selenide.Selenide.open;
 import static data.SQLHelper.cleanDatabase;
 
