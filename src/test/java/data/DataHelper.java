@@ -7,10 +7,10 @@ import java.util.Locale;
 
 
 public class DataHelper {
-    private static final Faker faker = new Faker(new Locale("en"));
 
     private DataHelper() {
     }
+    static Faker faker = new Faker(new Locale("en"));
 
     public static AuthInfo getAuthInfoWithTestData() {
         return new AuthInfo("vasya", "qwerty123");

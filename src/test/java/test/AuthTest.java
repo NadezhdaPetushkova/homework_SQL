@@ -25,7 +25,7 @@ class AuthTest {
         var loginPage = open("http://localhost:9999", LoginPage.class);
         var authInfo = DataHelper.getAuthInfoWithTestData();
         var verificationPage = loginPage.validLogin(authInfo);
-        verificationPage.verifiVerificationPageVisiblity();
+        verificationPage.verifyVerificationPageVisibility();
         var verificationCode = SQLHelper.getVerificationCode();
         verificationPage.validVerify(verificationCode.getCode());
     }
@@ -33,10 +33,10 @@ class AuthTest {
     @Test
     @DisplayName("")
     void shouldGetErrorNotificationIfLoginWithRandomUser() {
-        var loginPage = open("http//localhost:9999", LoginPage.class);
+        var loginPage = open("http://localhost:9999", LoginPage.class);
         var authInfo = DataHelper.generateRandomUser();
         loginPage.validLogin(authInfo);
-        loginPage.verifyErrorNotificationVisiblity();
+        loginPage.verifyErrorNotificationVisibility();
     }
 
     @Test
@@ -45,9 +45,9 @@ class AuthTest {
         var loginPage = open("http://localhost:9999", LoginPage.class);
         var authInfo = DataHelper.getAuthInfoWithTestData();
         var verificationPage = loginPage.validLogin(authInfo);
-        verificationPage.verifiVerificationPageVisiblity();
+        verificationPage.verifyVerificationPageVisibility();
         var verificationCode = DataHelper.generateRandomVerificationCode();
         verificationPage.verify(verificationCode.getCode());
-        verificationPage.verifiVerificationPageVisiblity();
+        verificationPage.verifyVerificationPageVisibility();
     }
 }
